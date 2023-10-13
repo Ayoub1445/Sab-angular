@@ -1,0 +1,10 @@
+<p>parent works!</p>
+
+<!-- pour faire le transfert depuis parent a child -->
+<!-- <app-child [nameFromParent] = "name"></app-child> -->
+
+
+
+<app-child (childEvent)=" message = $event"></app-child>
+{{message}}
+

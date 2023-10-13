@@ -1,0 +1,47 @@
+<p>fomr-test works!</p>
+
+
+
+<div class="container">
+  <h3><u>Contact</u></h3>
+  <!-- autocomplete = off : desactive la proposition automatique des mails enregistrer -->
+  <form autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+    <div class="form-group">
+      <label for="email">E-mail</label>
+      <input type="email" id="email" class ="form-control"
+      ngModel name ="email" [(ngModel)]="login.email" #email="ngModel" required minlength="5" maxlength="20"  >
+      <!-- pattern="ayoub" -->
+      <div class="alert alert-danger" *ngIf="email.touched && !email.valid">
+        <div *ngIf="email.errors?.['required']">required</div>
+        <div *ngIf="email.errors?.['minlength']">min 5 characters</div>
+        <div *ngIf="email.errors?.['maxlength']">max 5 characters </div>
+        <!-- <div *ngIf="email.errors?.['pattern']">pattern</div> -->
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" class ="form-control"
+      ngModel name="password" [(ngModel)]="login.password" #password="ngModel" required minlength="5" maxlength="20"  >
+      <!-- pattern="ayoub" -->
+      <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
+        <div *ngIf="password.errors?.['required']">required</div>
+        <div *ngIf="password.errors?.['minlength']">min 5 characters</div>
+        <div *ngIf="password.errors?.['maxlength']">max 5 characters </div>
+        <!-- <div *ngIf="email.errors?.['pattern']">pattern</div> -->
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="confirmPassword">confirm Password</label>
+      <input type="password" name="confirmPassword" id="confirmPassword" required
+      class="form-control" #confirmPassword="ngModel" [(ngModel)]="confirmPass" pattern="{{login.password}}" >
+      <div class="alert alert-danger" *ngIF="confirmPassword.touched && !confirmPassword.valid">
+        <div *ngIf="confirmPassword.errors?.['required']">Confirm Password required</div>
+
+      </div>
+    </div>
+      <br>
+      <br>
+
+    <button class="btn btn-danger" type="submit">Send</button>
+  </form>
+</div>

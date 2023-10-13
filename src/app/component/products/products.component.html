@@ -1,0 +1,31 @@
+<p>products works!</p>
+
+
+<div class="row">
+  <div class="col-md-4">
+    <label for="">qr Code Text</label>
+    <textarea type="text" class="form-control" [(ngModel)]="qrCodeText " name="qrCodeText"></textarea>
+
+  </div>
+
+  <div class="col-md-2">
+    <qrcode [width]="100" [qrdata]="qrCodeText" ></qrcode>
+  </div>
+</div>
+
+
+
+
+<!-- table pour faire le teste d'affichage de Data Table , depuis le service sur different compo -->
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <th>Quanity</th>
+    <th>Price</th>
+  </tr>
+  <tr *ngFor="let item of table">
+    <td>{{item.productName}}</td>
+    <td>{{item.productPrice}}</td>
+    <td>{{item.productQuantity}}</td>
+  </tr>
+</table>

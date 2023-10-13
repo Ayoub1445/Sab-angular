@@ -1,0 +1,39 @@
+<div class="row d-flex justify-content-center">
+  <button type="button" class="btn btn-link" (click)="goToFirstCompo()">Go to First-compo</button>
+</div>
+<div class="row" *ngIf="active">
+  <h3>Welcom {{firstName}} </h3>
+</div>
+
+<!-- exp pour comprendre ngFor -->
+<div class="row">
+  <div class="col-md-6">
+    <table class="table table-striped table-bordered ">
+      <thead><tr>
+        <th>Name</th>
+        <th>Code</th>
+        <th>Contry</th>
+        <th>Icon</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of dataList">
+          <td>{{item.name}}</td>
+          <td>{{item.num}}</td>
+          <td>{{item.country}}</td>
+          <td><td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<!-- exp pour comprendre ngSwitch  il Prend uniquement le bon choix que j'ai mets comme var dans ts -->
+<div class="row">
+  <div [ngSwitch]="name">
+    <div *ngSwitchCase="'amine'">Welcome, Amine</div>
+    <div *ngSwitchCase="'rahim'">Welcome, rahim</div>
+    <div *ngSwitchCase="'fatih'">Welcome, Fatih</div>
+  </div>
+</div>
+
+

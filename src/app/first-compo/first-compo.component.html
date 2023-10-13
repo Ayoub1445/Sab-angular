@@ -1,0 +1,58 @@
+<h1 style="text-align:center;">Welcom to my App</h1>
+
+
+
+<p>Welcome  {{name}}  ton S est {{getStatus()}}  </p>
+
+<button type="button" class="btn btn-danger" (click)="getMessage()">Save</button>
+
+ <!-- voila comment faire le 2 Way buiding pour avoir un 2 affichage   -->
+<div class="row">
+  <div class="col-md-4 offset-md-4">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="text-center"> 2 Way Buiding </h4>
+      </div>
+      <div class="card-body">
+        <input type="text" class="form-control" [(ngModel)]="Message"> <b class="text-danger">{{Message}}</b>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row d-flex justify-content-center">
+  <button type="button" class="btn btn-link" (click)="goToSecondCompo()">Go to Second-compo</button>
+</div>
+
+<!-- table pour faire le teste d'affichage de Data Table , depuis le service sur different compo -->
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <th>Quanity</th>
+    <th>Price</th>
+  </tr>
+  <tr *ngFor="let item of table">
+    <td>{{item.productName}}</td>
+    <td>{{item.productPrice}}</td>
+    <td>{{item.productQuantity}}</td>
+  </tr>
+</table>
+
+
+<hr>
+<h3>Json Placeholder data</h3>
+<table class="table table-striped table-hover table-sm">
+  <thead class="thead-dark">
+   <th>#</th>
+   <th>Full Name</th>
+   <th>Email</th>
+   <th>Adress</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of userList">
+     <td>{{user.id}}</td>
+     <td>{{user.name}}</td>
+     <td>{{user.email}}</td>
+     <td>{{user.address.street}}</td>
+    </tr>
+  </tbody>
+</table>
