@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-// import {  } from 'rxjs-compat';
 
 @Injectable({
   providedIn: 'root',
@@ -18,5 +17,4 @@ export class BehaviorService {
   getName(): Observable<string> {
     return this.mySendName.asObservable();
   }
-  // getName() {}
 }
