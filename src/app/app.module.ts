@@ -16,6 +16,8 @@ import { FomrTestComponent } from './component/fomr-test/fomr-test.component';
 import { QRCodeModule } from 'angularx-qrcode';
 import { HttpClientModule } from '@angular/common/http';
 import { CsvFileComponent } from './component/csv-file/csv-file.component';
+import { SendComponent } from './component/behavior/send/send.component';
+import { ReceiveComponent } from './component/behavior/receive/receive.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { CsvFileComponent } from './component/csv-file/csv-file.component';
     PipeComponent,
     FomrTestComponent,
     CsvFileComponent,
+    SendComponent,
+    ReceiveComponent,
   ],
   imports: [
     BrowserModule,

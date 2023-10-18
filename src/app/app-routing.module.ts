@@ -10,6 +10,8 @@ import { ObservableTestComponent } from './component/observable-test/observable-
 import { PipeComponent } from './component/pipe/pipe.component';
 import { FomrTestComponent } from './component/fomr-test/fomr-test.component';
 import { CsvFileComponent } from './component/csv-file/csv-file.component';
+import { SendComponent } from './component/behavior/send/send.component';
+import { ReceiveComponent } from './component/behavior/receive/receive.component';
 
 const routes: Routes = [
   { path: 'First', component: FirstCompoComponent },
@@ -22,6 +24,8 @@ const routes: Routes = [
   { path: 'pipe', component: PipeComponent },
   { path: 'FormTest', component: FomrTestComponent },
   { path: 'csv-file', component: CsvFileComponent },
+  { path: 'behavior', component: SendComponent },
+  { path: 'receive', component: ReceiveComponent },
   { path: '**', component: FirstCompoComponent },
   // ce dernier permet de mettre le compo choisi comme page par defaut , si je met any thing cela me remet sur le compo choisi
 ];
